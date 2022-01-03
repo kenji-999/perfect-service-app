@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto11
+  build:
+    commands:
+      - echo "... Building Java app..."
+      - mvn clean install -DskipTests=true
+  post_build:
+    commands:
+      - echo "...Java app is build..."
+artifacts:
+  files:
+    - target/perfect-service-0.0.1-SNAPSHOT.jar
